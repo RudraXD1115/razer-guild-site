@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RudraXD1115 | Razer Guild</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
+body{background:#020617;color:white;overflow-x:hidden}
+#particles{position:fixed;width:100%;height:100%;z-index:-1}
+
+nav{display:flex;justify-content:space-between;align-items:center;padding:20px 50px;background:rgba(0,0,0,0.6);backdrop-filter:blur(10px)}
+nav .logo{display:flex;align-items:center;gap:10px}
+nav img{width:40px}
+nav h1{color:#c084fc}
+nav a{color:white;text-decoration:none;margin-left:20px;transition:0.3s}
+nav a:hover{color:#a855f7}
+
+.hero{text-align:center;padding:120px 20px;animation:fadeIn 2s ease}
+.hero h1{font-size:70px;background:linear-gradient(90deg,#d946ef,#818cf8);-webkit-background-clip:text;color:transparent;animation:glow 2s infinite alternate}
+.hero p{color:#cbd5f5}
+
+@keyframes glow{
+ from{text-shadow:0 0 10px #a855f7}
+ to{text-shadow:0 0 30px #d946ef}
+}
+@keyframes fadeIn{
+ from{opacity:0;transform:translateY(30px)}
+ to{opacity:1;transform:translateY(0)}
+}
+
+.btn{display:inline-block;margin-top:30px;padding:14px 30px;border-radius:30px;background:linear-gradient(45deg,#9333ea,#6366f1);color:white;text-decoration:none;transition:0.3s}
+.btn:hover{transform:scale(1.1);box-shadow:0 0 20px #9333ea}
+
+.section{padding:80px 50px}
+.about{display:flex;gap:40px;align-items:center;background:#0f172a;border-radius:25px;padding:40px;animation:fadeIn 2s}
+.about img{width:180px;border-radius:50%;border:3px solid #a855f7}
+
+.players{text-align:center}
+.players input{padding:12px;border-radius:10px;border:none;width:250px}
+.players button{padding:12px;border:none;border-radius:10px;background:#9333ea;color:white;cursor:pointer}
+.players button:hover{box-shadow:0 0 15px #9333ea}
+.result{margin-top:20px}
+
+.links{text-align:center}
+.links a{display:inline-block;margin:15px;padding:12px 25px;background:#1e293b;border-radius:25px;color:white;text-decoration:none;transition:0.3s}
+.links a:hover{background:#9333ea;box-shadow:0 0 15px #9333ea}
+
+@media(max-width:768px){.about{flex-direction:column;text-align:center}}
+</style>
+</head>
+<body>
+<div id="particles"></div>
+
+<nav>
+ <div class="logo">
+  <img src="https://cdn-icons-png.flaticon.com/512/1055/1055687.png">
+  <h1>RudraXD1115</h1>
+ </div>
+ <div>
+  <a href="#players">Players</a>
+  <a href="https://portal.nethergames.org/guild/Razer" target="_blank">Razer Guild</a>
+ </div>
+</nav>
+
+<section class="hero">
+ <h1>Razer Guild</h1>
+ <p>Elite NetherGames Guild • Powered by RudraXD1115</p>
+ <a class="btn" href="https://portal.nethergames.org/guild/Razer" target="_blank">Visit Guild</a>
+</section>
+
+<section class="section">
+ <div class="about">
+  <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAABrUlEQVR4nO2aMU7DMBBF3xQqkQKpQAp0AClACqUAKdACqUAKdACqUAKdACqUAJ1o0s5k7s7k0yS8m7y9l9gk8k9z7m2bQwAAAAAAAAAAwF8l2t2m6bqv7b1v3l5m7y1c2k9m6s1r8s2g2p0g9n2q3c1q8o1o8m1l8r1m8o1p8n1q8o1r8n1s8o1t8n1u8o1v8n1w8o1x8n1y8o1z8n1/4p1c2k8m7y1c2k9m6s1r8s2g2p0g9n2q3c1q8o1o8m1l8r1m8o1p8n1q8o1r8n1s">
+  <div>
+   <h2>About Me</h2>
+   <p>Hey! I'm RudraXD1115, Minecraft player & creator. Member of Razer Guild on NetherGames.</p>
+  </div>
+ </div>
+</section>
+
+<section id="players" class="section players">
+ <h2>Check Player Stats</h2>
+ <input id="playerName" placeholder="Enter Username">
+ <button onclick="checkStats()">Search</button>
+ <div class="result" id="result"></div>
+</section>
+
+<section class="section links">
+ <a href="https://portal.nethergames.org/guild/Razer" target="_blank">Razer Guild</a>
+ <a href="https://www.youtube.com/@RudraXD-1115" target="_blank">YouTube</a>
+ <a href="https://discord.gg/V85FeM5v5U" target="_blank">Discord</a>
+</section>
+
+<script>
+function checkStats(){
+ let name=document.getElementById('playerName').value;
+ if(!name)return;
+ document.getElementById('result').innerHTML=`<a href="https://portal.nethergames.org/player/${name}" target="_blank">View ${name}'s Stats</a>`;
+}
+
+tsParticles.load("particles",{
+ particles:{number:{value:80},size:{value:2},move:{speed:1},links:{enable:true}},
+ interactivity:{events:{onhover:{enable:true,mode:"repulse"}}}
+});
+</script>
+
+</body>
+</html>
